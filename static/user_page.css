@@ -1,4 +1,4 @@
-/* user_page.css */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #000;
@@ -60,7 +60,7 @@ margin-bottom: 2%;
 
 img {
     max-width: 100%;
-    max-height: 230px; /* Set a maximum height for the image */
+    max-height: 230px;
     width: auto;
     height: auto;
     object-fit: cover;
