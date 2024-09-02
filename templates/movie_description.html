@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Description</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, p, img, a, button {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            background-color: black;
+            color: rgb(255, 166, 0);
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        img {
+            width: 100%; /* Make the image responsive */
+            max-width: 600px; /* Set a maximum width */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(255, 166, 0);
+        }
+
+        button {
+            padding: 8px;
+            background-color: rgb(255, 166, 0);
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        button:hover {
+            background-color: black;
+            color: rgb(255, 166, 0);
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ movie.title }}</h1>
+    <p>{{ movie.description }}</p>
+   <!-- <img src="{{ movie.photo_url }}" alt="{{ movie.title }} Photo"> -->
+    <br>
+    <a href="{{ url_for('book_ticket', movie_id=movie.id )}}"><button>Book Ticket</button></a>
+</body>
+</html>
