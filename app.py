@@ -3,22 +3,22 @@ from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
-# Configure MySQL
+
 app.config['MYSQL_HOST']="localhost"
 app.config['MYSQL_USER']="root"
 app.config['MYSQL_PASSWORD']="abhijith@35"
 app.config['MYSQL_DB']="movieextra"
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
-# Initialize MySQL
+
 mysql = MySQL(app)
 
-# Set a secret key for session management
+
 app.secret_key = 'your_secret_key'
 
 from flask import flash
 
-# Placeholder functions for database interactions
+
 def validate_admin_credentials(username, password):
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM admins WHERE username = %s AND password = %s", (username, password))
@@ -66,7 +66,7 @@ def insert_booking_details(user_id, movie_id, num_tickets, booking_date):
 
 from flask import flash, render_template, redirect, url_for, request, session
 
-# Routes for login and main page
+
 @app.route('/')
 def main_page():
     return render_template('main_page.html')
@@ -97,7 +97,6 @@ def user_login():
 
     return render_template('user_login.html')
 
-# Admin Page
 @app.route('/admin_page', methods=['GET', 'POST'])
 def admin_page():
     if 'username' not in session:
@@ -106,12 +105,12 @@ def admin_page():
     if request.method == 'POST':
         title = request.form['title']
         description = request.form['description']
-        photo_url = request.form['photo_url']  # Assuming you have an input for photo_url in the form
+        photo_url = request.form['photo_url']  
         insert_movie_details(title, description, photo_url)
 
     return render_template('admin_page.html')
 
-# User Page
+
 @app.route('/user_page')
 def user_page():
     if 'username' not in session:
@@ -120,20 +119,19 @@ def user_page():
     movies = get_all_movies()
     return render_template('user_page.html', movies=movies)
 
-# Movie Description Page
+
 @app.route('/movie_description/<int:movie_id>')
 def movie_description(movie_id):
     movie_details = get_movie_details(movie_id)
     return render_template('movie_description.html', movie=movie_details)
 
-# Booking Tickets
 @app.route('/book_ticket/<int:movie_id>', methods=['GET', 'POST'])
 def book_ticket(movie_id):
     if 'username' not in session:
         return redirect(url_for('user_login'))
 
     if request.method == 'POST':
-        user_id = 1  # Replace with the actual user ID from the session
+        user_id = 1 
         num_tickets = int(request.form['num_tickets'])
         booking_date = request.form['booking_date']
         insert_booking_details(user_id, movie_id, num_tickets, booking_date)
