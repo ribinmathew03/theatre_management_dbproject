@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
     <style>
-        /* Reset some default styles */
+       
         body, h1, form, label, input, textarea, button {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Global styles */
         body {
             background-color: black;
             color: rgb(255, 166, 0);
@@ -28,7 +27,6 @@
             margin-bottom: 20px;
         }
 
-        /* Form styles */
         form {
             display: flex;
             flex-direction: column;
@@ -48,7 +46,7 @@
         }
 
         textarea {
-            height: 100px; /* Adjust the height as needed */
+            height: 100px; 
             resize: vertical;
         }
 
@@ -71,11 +69,9 @@
 <body>
     <h1>Welcome, Admin!</h1>
     <form method="POST" action="{{ url_for('admin_page') }}">
-        <!-- Other form fields -->
         <input type="text" name="title" placeholder="Movie Title" required>
         <textarea name="description" placeholder="Movie Description" required></textarea>
         <input type="text" name="photo_url" placeholder="Photo URL" required>
-        <!-- Other form fields -->
         <button type="submit">Add Movie</button>
     </form>
 </body>
