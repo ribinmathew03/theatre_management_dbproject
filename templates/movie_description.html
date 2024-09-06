@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Description</title>
     <style>
-        /* Reset some default styles */
         body, h1, p, img, a, button {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* Global styles */
         body {
             background-color: black;
             color: rgb(255, 166, 0);
@@ -33,8 +30,8 @@
         }
 
         img {
-            width: 100%; /* Make the image responsive */
-            max-width: 600px; /* Set a maximum width */
+            width: 100%;
+            max-width: 600px; 
             height: auto;
             margin-bottom: 20px;
         }
@@ -63,7 +60,6 @@
 <body>
     <h1>{{ movie.title }}</h1>
     <p>{{ movie.description }}</p>
-   <!-- <img src="{{ movie.photo_url }}" alt="{{ movie.title }} Photo"> -->
     <br>
     <a href="{{ url_for('book_ticket', movie_id=movie.id )}}"><button>Book Ticket</button></a>
 </body>
