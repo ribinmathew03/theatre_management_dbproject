@@ -5,14 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Ticket</title>
     <style>
-        /* Reset some default styles */
         body, h1, form, label, input {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        /* Global styles */
         body {
             background-color: black;
             color: rgb(255, 166, 0);
@@ -27,8 +24,6 @@
         h1 {
             margin-bottom: 20px;
         }
-
-        /* Form styles */
         form {
             display: flex;
             flex-direction: column;
@@ -60,8 +55,6 @@
             background-color: black;
             color: rgb(255, 166, 0);
         }
-
-        /* Styles for the success message */
         .success-message {
             color: green;
             font-weight: bold;
@@ -73,35 +66,27 @@
     <h1>Book Ticket</h1>
 
     <form method="post" onsubmit="showSuccessMessage()">
-        <!-- Booking form, e.g., number of tickets -->
         <label for="num_tickets">Number of Tickets:</label>
         <input type="number" id="num_tickets" name="num_tickets" min="1" required>
-
-        <!-- For example, a date picker for selecting the booking date -->
         <label for="booking_date">Booking Date:</label>
         <input type="date" id="booking_date" name="booking_date" required>
 
         <input type="submit" value="Confirm Booking">
     </form>
 
-    <!-- Success message -->
     <div id="successMessage" class="success-message" style="display: none;">
         Movie booked successfully!
     </div>
 
     <script>
-        // JavaScript function to show the success message and redirect to a new page
+
         function showSuccessMessage() {
-            // Display the success message
             var successMessage = document.getElementById('successMessage');
             successMessage.style.display = 'block';
 
-            // Wait for 5 seconds and then redirect to a new page
             setTimeout(function () {
-                window.location.href = '/success'; // Adjust the URL as needed
+                window.location.href = '/success';
             }, 5000);
-
-            // Prevent the form from submitting (you can remove this line if you want the form to submit)
             return false;
         }
     </script>
