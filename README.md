@@ -10,8 +10,8 @@ Done as part of my DBMS Lab Project
 4. Movie Details: Users can view detailed information about a selected movie.
 5. Ticket Booking: Users can book tickets for their chosen movies.
 6. Database Management: MySQL database integration for storing user details, admin credentials, movie information, and booking records.
-![image](https://github.com/user-attachments/assets/e8bf029d-b131-4420-abc6-f1c90a3a7de1)
-![image](https://github.com/user-attachments/assets/02d5e6d9-ff4c-464a-b7f1-d02cab042415)
+![image](https://github.com/user-attachments/assets/c1ad1507-bf4b-4a5a-af36-1d26ef0df67c)
+![image](https://github.com/user-attachments/assets/59925573-2df9-47e7-9ca7-a040a273052b)
 ![image](https://github.com/user-attachments/assets/2de753af-1142-4792-9fb9-b90b1205b7f7)
 ![image](https://github.com/user-attachments/assets/3b49bca0-53df-4e65-a554-6b445aed840f)
 ![image](https://github.com/user-attachments/assets/c3bcef57-e46d-4972-913b-c8f159887266)
